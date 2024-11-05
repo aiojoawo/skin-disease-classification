@@ -1,15 +1,31 @@
 # skin-infection-classification
-This project aims to create a model to distinguish between ringworm and pityriasis rosea. Pityriasis rosea is often misdiagnosed as ringworm because they look very familiar but they require different treatments.
+The project aims to develop a neural network model capable of distinguishing between Ringworm and Pityriasis Rosea. These two skin conditions often appear similar, which leads to misdiagnosis, but they require different treatments. 
+
+Dataset Collection
+Images for both Ringworm and Pityriasis Rosea (PR) were collected using the [Image Downloader - Image Eye browser extension](https://tinyurl.com/image-down). This extension allows you to filter images by size and type, then download them into separate folders for each condition. One folder was created for Ringworm images, and another for Pityriasis Rosea images.
+
+Data Preprocessing
+Manual Cleaning: Since the dataset was relatively small, data cleaning was performed manually to remove irrelevant or poor-quality images.
+Further Preprocessing:
+Data Augmentation: Applied various augmentation techniques to increase the diversity of the training dataset.
+Image Scaling: Images were scaled to meet the input requirements of the machine learning model.
+
+Model Building
+Transfer Learning: I used the Xception pre-trained model for transfer learning. This model was fine-tuned on the dataset to perform the classification task.
+Model Training: The training process was conducted using Google Colab. You can find the code for training the model in the following notebook: https://tinyurl.com/skin-code
+
+Model Deployment:
+The trained model was deployed using Flask to create a web application for real-time skin infection classification.
+
+Flask Deployment:
+The Python file for the Flask application is app.py.
+The HTML template for the web interface is located in the templates folder.
+A sample test image is provided in the static folder for demonstration purposes.
+
+Model and Training Data Download:
+You can download the trained model and the training dataset from the following link: https://shorturl.at/GsOF0
 
 
-The steps taken to build the model include:
-Pityriasis rosea(PR) and ringworm images were downladed using the image downloader-image eye extension. Here's the link to install the extension:https://chromewebstore.google.com/detail/image-downloader-imageye/agionbommeaifngbhincahgmoflcikhm?hl=en-US&pli=1
-The extension allows you to filter images by size and filter type and downloads the images in a folder. One folder for ringworm and one for PR seach results
+Below is a screenshot showing the web interface of the deployed Flask application:
+![image](https://github.com/user-attachments/assets/7e55af12-fea2-437e-ae79-5080ac8fbb5f)
 
-
-Data cleaning was done manually since the images were not a lot and the extension helped with filtering
-The model was built in goofle colab notebook  
-
-Further preprocessing were carried out on the images; data augmentation, scaling to match model input requirements
-I applied transfer learning using the Xception pretrained model
-Model was deployed on flask 
